@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @Service
 @AllArgsConstructor
-public class CalculateProbabilities {
+public class GenerateTypesAndCalculateProbabilities {
     @Autowired
     private final ApplicationContext applicationContext;
 
@@ -50,7 +50,7 @@ public class CalculateProbabilities {
     private final HigherWhenLast13Draws calculatorHigherWhenLast13Draws;
     private final HigherWhenLast14Draws calculatorHigherWhenLast14Draws;
 
-    public void executeAll() {
+    public void generateProbabilityTypesAndValuesByDraw() {
         List<Short> drawTypeIdList = drawDatasourcePort.getDrawTypeIdList();
         for (Short drawTypeId : drawTypeIdList) {
             DrawList drawList = drawDatasourcePort.getDrawListByDrawTypeId(drawTypeId);
@@ -58,11 +58,11 @@ public class CalculateProbabilities {
 
             recalculateMatrixOccurrencesByDrawTypeId(drawList, initialDrawDate, drawTypeId);
 
-            processProbabilityTypes(drawList, initialDrawDate, drawTypeId);
+            createTypesAndGenerateProbabilities(drawList, initialDrawDate, drawTypeId);
         }
     }
 
-    private void processProbabilityTypes(DrawList drawList, TDateInteger initialDrawDate, Short drawTypeId) {
+    private void createTypesAndGenerateProbabilities(DrawList drawList, TDateInteger initialDrawDate, Short drawTypeId) {
         higherWhenLastAppearanceIsOlder(drawList, initialDrawDate, drawTypeId);
         higherWhenAppearsMoreTimesByLastNMonths(drawList, initialDrawDate, drawTypeId);
         higherWhenLastNDraws(drawList, initialDrawDate, drawTypeId);

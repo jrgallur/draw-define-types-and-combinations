@@ -1,0 +1,14 @@
+package com.drawupdateprobabilities.repositories;
+
+import com.drawupdateprobabilities.domain.ProbabilityTypeCombinationMO;
+import com.drawupdateprobabilities.domain.ProbabilityTypeCombinationWeightMO;
+import com.drawupdateprobabilities.domain.pks.ProbabilityTypeCombinationWeightId;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface ProbabilityTypeCombinationWeightRepository extends JpaRepository<ProbabilityTypeCombinationWeightMO, ProbabilityTypeCombinationWeightId> {
+    void deleteByProbabilityTypeCombinationId(Integer probabilityTypeCombinationId);
+
+    List<ProbabilityTypeCombinationWeightMO> findByProbabilityTypeCombination(ProbabilityTypeCombinationMO probabilityTypeCombinationMO);
+}

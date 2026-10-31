@@ -13,4 +13,5 @@ public class ProbabilityType {
     private Short id;
     private String code;
     private String description;
+    private Boolean active;
 }

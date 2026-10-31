@@ -18,4 +18,5 @@ public class ProbabilityTypeMO {
 
     private String code;
     private String description;
+    private Boolean active;
 }
