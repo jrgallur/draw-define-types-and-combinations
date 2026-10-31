@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.draw</groupId>
+        <artifactId>calculate-type-probabilities</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <groupId>com.draw.calculate-type-probabilities</groupId>
+    <artifactId>boot</artifactId>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <!-- Needed to get entityManagerFactory Bean at execution time -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.3</version>
+        </dependency>
+
+        <!-- application (domain) dependency -->
+        <dependency>
+            <groupId>com.draw.calculate-type-probabilities</groupId>
+            <artifactId>application</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- driven dependency -->
+        <dependency>
+            <groupId>com.draw.calculate-type-probabilities.driven</groupId>
+            <artifactId>database</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+</project>
