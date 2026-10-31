@@ -18,7 +18,7 @@ import java.util.Set;
 @Slf4j
 @Service
 @AllArgsConstructor
-public class CalculateCombinationsUseCase {
+public class TypeCombinationUseCase {
     private final ProbabilityTypeDatasourcePort probabilityTypeDatasourcePort;
     private final ProbabilityTypeCombinationDatasourcePort probabilityTypeCombinationDatasourcePort;
     private final ProbabilityTypeCombinationWeightDatasourcePort probabilityTypeCombinationWeightDatasourcePort;

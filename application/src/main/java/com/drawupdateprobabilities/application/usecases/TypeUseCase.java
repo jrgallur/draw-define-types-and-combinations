@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @Service
 @AllArgsConstructor
-public class GenerateTypesAndCalculateProbabilities {
+public class TypeUseCase {
     @Autowired
     private final ApplicationContext applicationContext;
 

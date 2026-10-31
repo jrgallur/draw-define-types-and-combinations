@@ -32,7 +32,7 @@ public abstract class CalculatorBase {
         if (probabilityType == null) {
             probabilityType = probabilityTypeDatasourcePort.getByCode(getProbabilityTypeCode());
             if (probabilityType == null) {
-                probabilityType = ProbabilityType.builder().code(getProbabilityTypeCode()).description(getProbabilityTypeDescription()).build();
+                probabilityType = ProbabilityType.builder().code(getProbabilityTypeCode()).description(getProbabilityTypeDescription()).active(true).build();
                 probabilityTypeDatasourcePort.upsert(probabilityType);
                 probabilityType = probabilityTypeDatasourcePort.getByCode(getProbabilityTypeCode());
             }
